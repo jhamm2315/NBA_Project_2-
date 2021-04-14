@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NBAstatsVIS</title>
+    <link rel="stylesheet" href="stylesheets/cssmain.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+</head>
+<body>
+
+<div id='aboutus'><a href="https://wilsoncernwq.github.io/NBAstatsVIS/infoPage.html">About the Project</a></div>
+<div id="divMenuView" style="display: none">
+    <span>Team</span>
+    <select class="dropdown" id="queryTeam" onchange="myQueryTeam(this)"></select>
+    <span>Position</span>
+    <select class="dropdown" id="queryPosition" onchange="myQueryPosition(this)">
+        <option value="Guard">Guard</option>
+        <option value="Center">Center</option>
+        <option value="Forward">Forward</option>
+        <option selected value="all">All</option>
+    </select>
+    <span>Year From</span>
+    <select class="dropdown" id="queryYearFrom" onchange="myQueryYearFrom(this)">
+    </select>
+    <span>Year To</span>
+    <select class="dropdown" id="queryYearTo" onchange="myQueryYearTo(this)">
+    </select>
+    <span>All Star</span>
+    <select class="dropdown" id="queryAllStar" onchange="myQueryAllStar(this)">
+        <option value="all">All</option>
+        <option selected value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <form id="queryForm" onsubmit="return false;">
+        <input class="dropdown" value="Hint Player Name"
+               onclick="myClearForm(this)"
+               onkeyup="myQueryAutoHintSubmit(this)"
+        />
+    </form>
+    <svg id="svgMenuView">
+        <g id="groupMenuViewRect"></g>
+        <g id="groupMenuViewText"></g>
+    </svg>
+</div>
+<div class="view-box" id="divInfoView"></div>
+<div class="view-block" id="divRankView"></div>
+<div class="view-block" id="divGameView"></div>
+<div class="view-block" id="shotChart"></div>
+<div class="tooltip" id="tooltiplist"></div>
+<div id="CompareView"></div>
+
+<script src="external/d3/d3.v4.js"></script>
+<script src="external/d3-tip/index.js"></script>
+<script src="external/d3-legend/d3-legend.js"></script>
+<script src="external/d3-queue/d3-queue.v3.min.js"></script>
+<script src="external/d3-hexbin/d3.hexbin.min.js"></script>
+
+<script src="script/helper.js"></script>
+<script src="script/main.js"></script>
+<script src="script/MenuView.js"></script>
+<script src="script/InfoView.js"></script>
+<script src="script/RankView.js"></script>
+<script src="script/GameView.js"></script>
+<script src="script/ShotView.js"></script>
+<script src="script/CompareView.js"></script>
+
+</body>
+</html>
